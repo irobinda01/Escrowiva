@@ -1,0 +1,36 @@
+{
+  "name": "escrowiva",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22 <23"
+  },
+  "scripts": {
+    "clean": "hardhat clean",
+    "compile": "hardhat compile",
+    "preflight": "hardhat run scripts/preflight.ts --network polkadotEvmTestnet",
+    "deploy:token": "hardhat run scripts/deploy-token.ts --network polkadotEvmTestnet",
+    "mint:token": "tsx scripts/mint-token.ts",
+    "deploy": "hardhat run scripts/deploy.ts --network polkadotEvmTestnet",
+    "deploy:testnet": "hardhat run scripts/deploy.ts --network polkadotEvmTestnet",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend run build",
+    "vercel-install": "npm --prefix frontend install",
+    "vercel-build": "npm --prefix frontend run build",
+    "vercel-dev": "npm --prefix frontend run dev"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^7.0.0",
+    "@openzeppelin/contracts": "^5.1.0",
+    "@types/node": "^22.10.5",
+    "dotenv": "^16.4.7",
+    "hardhat": "^3.2.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "ethers": "^6.13.5"
+  }
+}
